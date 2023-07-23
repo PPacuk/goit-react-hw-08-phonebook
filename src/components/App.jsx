@@ -1,21 +1,16 @@
-import css from './App.module.css';
-import Section from './Section/Section';
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
+import { Routes, Route } from 'react-router';
+import { ContactsPage } from './Pages/ContactsPage';
+import { PrivateRoute } from './Routes/PrivateRoute';
+import { AuthPage } from './Pages/AuthPage';
 
 export const App = () => {
   return (
-    <>
-      <Section title="Phonebook">
-        <ContactForm />
-      </Section>
-      <Section title="Contacts">
-        <div className={css.contactsWrapper}>
-          <Filter />
-          <ContactList />
-        </div>
-      </Section>
-    </>
+    <Routes>
+      <Route path="/" element={<AuthPage />} />
+      <Route
+        path="/contacts"
+        element={<PrivateRoute fallback="/" component={<ContactsPage />} />}
+      />
+    </Routes>
   );
 };

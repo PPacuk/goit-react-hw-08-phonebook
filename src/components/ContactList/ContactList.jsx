@@ -6,8 +6,8 @@ import {
   selectContactsList,
   selectError,
   selectLoading,
-} from 'redux/selectors';
-import { deleteContact, fetchContacts } from 'redux/operations';
+} from 'redux/selectors/contacts';
+import { deleteContact, fetchContacts } from 'redux/operations/contacts';
 import { Loader } from 'components/Loader/Loader';
 
 export const ContactList = () => {
@@ -30,9 +30,9 @@ export const ContactList = () => {
         .filter(contact =>
           contact.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
         )
-        .map(({ id, name, phone }) => (
+        .map(({ id, name, number }) => (
           <li key={id}>
-            {name} : {phone}
+            {name} : {number}
             <button
               className={css.contactsBtn}
               onClick={() => dispatch(deleteContact(id))}

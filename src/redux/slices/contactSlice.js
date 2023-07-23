@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { Notify } from 'notiflix';
-import { addContact, deleteContact, fetchContacts } from './operations';
-
+import { addContact, deleteContact, fetchContacts } from 'redux/operations/contacts';
 
 const handlePending = (state, action) => {
   state.loading = true;
@@ -41,9 +40,7 @@ const contactSlice = createSlice({
     [deleteContact.fulfilled](state, action) {
       state.loading = false;
       state.error = null;
-      const index = state.items.findIndex(
-        ({id}) => id === action.payload.id
-      );
+      const index = state.items.findIndex(({ id }) => id === action.payload.id);
       state.items.splice(index, 1);
       Notify.success(`Contact removed from list!`);
     },

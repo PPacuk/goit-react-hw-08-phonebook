@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix';
-import { selectContactsList } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+import { selectContactsList } from 'redux/selectors/contacts';
+import { addContact } from 'redux/operations/contacts';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
-  const [phone, setNumber] = useState('');
+  const [number, setNumber] = useState('');
   const contactList = useSelector(selectContactsList);
   const dispatch = useDispatch();
 
@@ -29,7 +29,7 @@ export const ContactForm = () => {
     if (isOnList) {
       Notify.failure(`${name} is already in contact list!`);
     } else {
-      dispatch(addContact({ name, phone }));
+      dispatch(addContact({ name, number }));
       Notify.success(`${name} added to contact list!`);
       setName('');
       setNumber('');
@@ -60,7 +60,7 @@ export const ContactForm = () => {
         required
         className={css.formInput}
         placeholder="666 666 666"
-        value={phone}
+        value={number}
         onChange={handleNumberInput}
       />
       <button type="submit" className={css.formBnt}>
