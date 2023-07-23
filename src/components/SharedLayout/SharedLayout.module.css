@@ -1,0 +1,12 @@
+.headerContainer{
+    display: flex;
+    gap: 10px;
+}
+
+.navContainer{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
