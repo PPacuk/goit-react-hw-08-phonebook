@@ -8,6 +8,7 @@ const handlePending = (state, action) => {
 const handleRejected = (state, action) => {
   state.loading = false;
   state.error = action.payload;
+  console.log(action);
 };
 
 const authSlice = createSlice({
@@ -35,6 +36,7 @@ const authSlice = createSlice({
       state.loading = false;
       state.error = null;
       state.token = action.payload.token;
+      state.user = action.payload.user;
     },
 
     [logOut.pending]: handlePending,

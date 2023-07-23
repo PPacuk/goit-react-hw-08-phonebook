@@ -8,7 +8,9 @@ export const PrivateRoute = ({ component: Component, fallback = '/' }) => {
   if (token === null) {
     return <Navigate to={fallback} />;
   }
-  return Component;
+  return (
+    Component
+  )
 };
 PrivateRoute.propTypes = {
   fallback: propTypes.string.isRequired,
