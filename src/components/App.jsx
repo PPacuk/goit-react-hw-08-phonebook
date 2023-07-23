@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router';
 import { ContactsPage } from './Pages/ContactsPage';
 import { PrivateRoute } from './Routes/PrivateRoute';
-import { AuthPage } from './Pages/AuthPage';
 import { Home } from './Pages/HomePage';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Login } from './Pages/LoginPage';
