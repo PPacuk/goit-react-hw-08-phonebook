@@ -1,12 +1,29 @@
-.headerContainer{
-    display: flex;
-    gap: 10px;
+.headerContainer {
+  display: flex;
+  gap: 10px;
+  box-shadow: 2px 3px 7px 5px rgba(0, 0, 0, 0.37);
 }
 
-.navContainer{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    width: 100%;
-    justify-content: space-around;
+.navContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.userBtns {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.logUserBtns {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+  margin-right: 30px;
 }

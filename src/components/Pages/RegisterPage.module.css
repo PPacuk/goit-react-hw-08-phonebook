@@ -1,0 +1,28 @@
+.registerContainer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.registerForm{
+    width: 30%;;
+}
+
+.registerFieldset{
+    border-radius: 5px;
+}
+
+.registerInputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.registerInput{
+    width: 300px;
+}
+
+.registerBtn{
+    width: 100px;
+}

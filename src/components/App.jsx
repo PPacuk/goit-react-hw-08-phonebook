@@ -8,14 +8,19 @@ import { Register } from './Pages/RegisterPage';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/operations/auth';
+import Notiflix from 'notiflix';
+
+Notiflix.Notify.init({
+  distance: '80px'
+});
 
 export const App = () => {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
-dispatch(refreshUser())
-  }, [dispatch])
-  
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>

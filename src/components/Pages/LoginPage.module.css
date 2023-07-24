@@ -1,0 +1,28 @@
+.loginContainer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.loginForm{
+    width: 30%;;
+}
+
+.loginFieldset{
+    border-radius: 5px;
+}
+
+.loginInputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.loginInput{
+    width: 300px;
+}
+
+.loginBtn{
+    width: 100px;
+}

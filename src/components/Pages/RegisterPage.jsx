@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { register } from 'redux/operations/auth';
 import { selectAuthToken } from 'redux/selectors/auth';
+import css from './RegisterPage.module.css'
 
 export const Register = () => {
   const dispatch = useDispatch();
@@ -27,16 +28,33 @@ export const Register = () => {
   };
 
   return (
-    <form onSubmit={handleRegister}>
-      <fieldset>
-        <legend>Sign In</legend>
-        <div>
-          <input type="text" placeholder="Name" name="name" />
-          <input type="email" placeholder="Email" name="email" />
-          <input type="password" placeholder="Password" name="password" />
-          <button type="submit">Sign In</button>
-        </div>
-      </fieldset>
-    </form>
+    <div className={css.registerContainer}>
+      <form onSubmit={handleRegister} className={css.registerForm}>
+        <fieldset className={css.registerFieldset}>
+          <legend>Sign In</legend>
+          <div className={css.registerInputs}>
+            <input
+              className={css.registerInput}
+              type="text"
+              placeholder="Name"
+              name="name"
+            />
+            <input
+              className={css.registerInput}
+              type="email"
+              placeholder="Email"
+              name="email"
+            />
+            <input
+              className={css.registerInput}
+              type="password"
+              placeholder="Password"
+              name="password"
+            />
+            <button className={css.registerBtn} type="submit">Sign In</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
   );
 };

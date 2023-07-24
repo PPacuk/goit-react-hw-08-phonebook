@@ -11,12 +11,10 @@ export const Filter = () => {
   
   return (
     <>
+      <h2>Contacts</h2>
+
       <p>Find contacts by name</p>
-      <input
-        className={css.searchInput}
-        type="text"
-        onChange={inputHandler}
-      />
+      <input className={css.searchInput} type="text" onChange={inputHandler} />
     </>
   );
 };

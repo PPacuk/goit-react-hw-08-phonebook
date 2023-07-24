@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/operations/auth';
 import { selectAuthToken } from 'redux/selectors/auth';
+import css from './LoginPage.module.css';
 
 export const Login = () => {
   const dispatch = useDispatch();
@@ -23,17 +24,35 @@ export const Login = () => {
         password: form.elements.password.value,
       })
     );
+    form.reset();
   };
+
   return (
-    <form onSubmit={handleLogin}>
-      <fieldset>
-        <legend>Log In</legend>
-        <div>
-          <input type="email" placeholder="Email" name="email" />
-          <input type="password" placeholder="Password" name="password" />
-          <button type="submit">Log In</button>
-        </div>
-      </fieldset>
-    </form>
+    <div className={css.loginContainer}>
+      <form onSubmit={handleLogin} className={css.loginForm}>
+        <fieldset className={css.loginFieldset}>
+          <legend>Log In</legend>
+          <div className={css.loginInputs}>
+            <input
+              className={css.loginInput}
+              type="email"
+              placeholder="Email"
+              name="email"
+              required
+            />
+            <input
+              className={css.loginInput}
+              type="password"
+              placeholder="Password"
+              name="password"
+              required
+            />
+            <button type="submit" className={css.loginBtn}>
+              Log In
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
   );
 };
