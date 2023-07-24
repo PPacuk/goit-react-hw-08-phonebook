@@ -5,8 +5,17 @@ import { Home } from './Pages/HomePage';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Login } from './Pages/LoginPage';
 import { Register } from './Pages/RegisterPage';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from 'redux/operations/auth';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+dispatch(refreshUser())
+  }, [dispatch])
+  
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
