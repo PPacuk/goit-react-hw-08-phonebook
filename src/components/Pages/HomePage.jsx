@@ -1,8 +1,7 @@
-
 export const Home = () => {
   return (
     <div>
-      Home Page
+      Welcome on phonebook, please logIn or register to create your own list!
     </div>
   );
 };

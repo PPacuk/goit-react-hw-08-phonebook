@@ -8,7 +8,6 @@ export const SharedLayout = () => {
   const token = useSelector(selectAuthToken);
   const user = useSelector(selectAuthUser);
   const dispatch = useDispatch();
-    console.log(user);
     
   return (
     <>

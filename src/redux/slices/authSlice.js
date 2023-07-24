@@ -8,7 +8,6 @@ const handlePending = (state, action) => {
 const handleRejected = (state, action) => {
   state.loading = false;
   state.error = action.payload;
-  console.log(action);
 };
 
 const authSlice = createSlice({
